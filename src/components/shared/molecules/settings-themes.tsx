@@ -9,19 +9,32 @@ import {
 import { Button } from "@/components/ui/button";
 import { Settings, Palette } from "lucide-react";
 import ThemeSelector from "@/components/shared/templates/themes/theme-selector";
+import { cn } from "@/lib/utils";
 
-export default function SettingsThemes() {
+export default function SettingsThemes({
+  className,
+  icons = "palette",
+  variant = "ghost",
+}: {
+  variant?: "link" | "default" | "destructive" | "outline" | "secondary" | "ghost" | null;
+  className?: string;
+  icons: "palette" | "setting";
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
         <Button
-          variant="ghost"
+          variant={variant}
           size="icon"
-          className="fixed top-4 right-4 z-50 h-9 w-9 rounded-full bg-background/80 backdrop-blur-sm border shadow-sm hover:bg-accent"
+          className={cn(
+            "fixed top-4 right-4 z-50 h-9 w-9 rounded-full bg-background/80 backdrop-blur-sm border shadow-sm hover:bg-accent",
+            className
+          )}
         >
-          <Palette className="h-4 w-4" />
+          {icons === "setting" && <Settings className="h-4 w-4" />}
+          {icons === "palette" && <Palette className="h-4 w-4" />}
           <span className="sr-only select-none">Theme Settings</span>
         </Button>
       </PopoverTrigger>

@@ -184,7 +184,7 @@
   --primary-foreground: #0F172A;      /* Use the new dark background for contrast */
   --accent: #F59E0B;                  /* Keep the same amber */
   --accent-foreground: #0F172A;
-  
+
   --sidebar-primary: var(--primary);
   --sidebar-accent: var(--accent);
   --ring: color-mix(in oklch, var(--primary) 55%, transparent);
@@ -196,7 +196,7 @@
   --primary-foreground: #F1F5F9;      /* Light foreground for good contrast */
   --accent: #2563EB;                  /* Keep the same blue-600 */
   --accent-foreground: #F1F5F9;
-  
+
   --sidebar-primary: var(--primary);
   --sidebar-accent: var(--accent);
   --ring: color-mix(in oklch, var(--primary) 55%, transparent);
@@ -208,7 +208,7 @@
   --primary-foreground: #0F172A;      /* Dark foreground for contrast */
   --accent: #059669;                  /* Keep the same emerald-600 */
   --accent-foreground: #0F172A;
-  
+
   --sidebar-primary: var(--primary);
   --sidebar-accent: var(--accent);
   --ring: color-mix(in oklch, var(--primary) 55%, transparent);
@@ -220,7 +220,7 @@
   --primary-foreground: #F1F5F9;      /* Light foreground for contrast */
   --accent: #7C3AED;                  /* Keep the same violet-600 */
   --accent-foreground: #F1F5F9;
-  
+
   --sidebar-primary: var(--primary);
   --sidebar-accent: var(--accent);
   --ring: color-mix(in oklch, var(--primary) 55%, transparent);
@@ -232,7 +232,7 @@
   --primary-foreground: #0F172A;      /* Dark foreground for contrast */
   --accent: #EA580C;                  /* Keep the same orange-600 */
   --accent-foreground: #0F172A;
-  
+
   --sidebar-primary: var(--primary);
   --sidebar-accent: var(--accent);
   --ring: color-mix(in oklch, var(--primary) 55%, transparent);

@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Platform Admin",
-  description: "",
+  title: "Hoppas Admin Panel",
+  description: "Admin panel for Hoppas",
 };
 
 export default function RootLayout({
