@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hoppas Admin Panel",
+  title: "Admin Panel",
   description: "Admin panel for Hoppas",
 };
 

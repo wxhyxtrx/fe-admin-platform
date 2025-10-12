@@ -10,7 +10,7 @@ export default function LoginPage() {
 
       {/* Content */}
       <div className="relative z-10 min-h-[100svh] flex justify-center items-center px-4">
-        <SettingsThemes />
+        <SettingsThemes icons="setting" />
         
         <div className="w-full max-w-md space-y-10 select-none">
           <div className="space-y-2 text-center">
