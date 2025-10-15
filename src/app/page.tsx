@@ -1,4 +1,4 @@
-import LoginForm from "@/components/features/login/formLogin";
+import LoginForm from "@/components/features/login/form-login";
 import SettingsThemes from "@/components/shared/molecules/settings-themes";
 
 export default function LoginPage() {

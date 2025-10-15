@@ -1,4 +1,4 @@
-import { AppSidebar } from "@/components/shared/molecules/sidebar/sidebar-app";
+import { AppSidebar } from "@/components/shared/organisms/sidebar/sidebar-app";
 import Header from "@/components/shared/organisms/header";
 import { SidebarProvider } from "@/components/ui/sidebar";
 

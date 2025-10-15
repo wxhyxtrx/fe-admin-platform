@@ -19,10 +19,12 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { TypeLoginInput, loginSchema } from "@/lib/validation/login-schema";
+import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
+  const route = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const form = useForm<TypeLoginInput>({
     resolver: yupResolver(loginSchema),
     defaultValues: {
@@ -35,30 +37,31 @@ export default function LoginForm() {
 
   async function handleSubmit(values: TypeLoginInput) {
     setIsLoading(true);
-    
-    const loginPromise = () => 
-      new Promise<{ name: string; email: string }>((resolve, reject) => 
+
+    const loginPromise = () =>
+      new Promise<{ name: string; email: string }>((resolve, reject) =>
         setTimeout(() => {
           if (values.email && values.password) {
-            resolve({ 
-              name: values.email.split('@')[0],
-              email: values.email 
+            resolve({
+              name: values.email.split("@")[0],
+              email: values.email,
             });
+            route.push("/dashboard");
           } else {
-            reject(new Error('Invalid credentials'));
+            reject(new Error("Invalid credentials"));
           }
         }, 2000)
       );
 
     try {
       await toast.promise(loginPromise, {
-        loading: 'Signing in...',
+        loading: "Signing in...",
         success: (data: { name: string; email: string }) => {
           console.log("login values", values);
           setIsLoading(false);
           return `Welcome back, ${data.name}!`;
         },
-        error: 'Login failed. Please check your credentials.',
+        error: "Login failed. Please check your credentials.",
       });
     } catch (error) {
       console.error("Login error:", error);
@@ -145,21 +148,21 @@ export default function LoginForm() {
           <a
             href="/forgot-password"
             className={`text-sm text-primary hover:text-primary/80 transition-colors font-medium ${
-              isLoading ? 'pointer-events-none opacity-50' : ''
+              isLoading ? "pointer-events-none opacity-50" : ""
             }`}
           >
             Forgot password?
           </a>
         </div>
 
-        <Button 
-          type="submit" 
+        <Button
+          type="submit"
           disabled={isLoading}
           className="w-full h-11 bg-primary hover:bg-primary/90 text-primary-foreground font-medium transition-all duration-200 disabled:opacity-50"
         >
           {isLoading ? (
             <span className="flex gap-2 items-center">
-              <Loader2 className="h-4 w-4 animate-spin" /> 
+              <Loader2 className="h-4 w-4 animate-spin" />
               Signing in...
             </span>
           ) : (

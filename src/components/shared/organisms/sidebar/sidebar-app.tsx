@@ -113,6 +113,7 @@ export function AppSidebar() {
                     isActive={item.url === pathname}
                     size={"lg"}
                     asChild
+                    className=" data-[active=true]:text-white hover:bg-primary"
                   >
                     <a href={item.url}>
                       <item.icon className="!size-[22px]" />
