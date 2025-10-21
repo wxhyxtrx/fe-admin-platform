@@ -81,32 +81,32 @@ export default function TopSpender() {
       className: "",
     },
     {
-      label: "Cust Name",
+      label: "Nama Pelanggan",
       renderCell: ({ name }) => <p className="flex items-center gap-2">{top1Spender?.name === name && <MdStars className="text-yellow-600 text-lg"/>} {name} </p>,
       className: "",
     },
     {
-      label: "Avg Spent",
+      label: "Pembayaran",
       renderCell: ({ avgSpent }) => <p>{formatCurrency(avgSpent)}</p>,
       className: "",
     },
     {
-      label: "Total Spent",
+      label: "Sisa Hutang",
       renderCell: ({ totalSpent }) => <p>{formatCurrency(totalSpent)}</p>,
       className: "",
     },
     {
-      label: "Total Order",
-      renderCell: ({ totalOrder }) => <p>{totalOrder}</p>,
+      label: "Pesanan",
+      renderCell: ({ totalOrder }) => <p className="text-center">{totalOrder}</p>,
       className: "",
     },
     {
-      label: "Address",
+      label: "Alamat",
       renderCell: ({ location }) => <p>{location}</p>,
       className: "",
     },
     {
-      label: "Last Order",
+      label: "Terakhir Order",
       renderCell: ({ lastOrderAt }) => <p>{lastOrderAt}</p>,
       className: "",
     },
@@ -114,15 +114,9 @@ export default function TopSpender() {
   return (
     <Card>
       <CardHeader className="flex justify-between gap-5 items-center">
-        <Text>Best of 5 Spender</Text>
-        <div className="space-x-2.5">
-          <Button size={"sm"} variant={"secondary"} className="font-medium">
-            <BiFilter /> Filter
-          </Button>
-          <Button size={"sm"} variant={"secondary"} className="font-medium">
-            <BiSort /> Sort
-          </Button>
-        </div>
+        <Text variant="h5" className="p-0 text-stone-900 dark:text-white leading-5">
+          Pelanggan Teratas
+        </Text>
       </CardHeader>
       <CardContent>
         <Tables data={dataSpender} columns={columnTopSpender} />

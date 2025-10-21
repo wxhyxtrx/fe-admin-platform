@@ -6,7 +6,7 @@ import { PiListBulletsBold } from "react-icons/pi";
 export default function TrigerSidebar() {
   const { toggleSidebar, open, openMobile, isMobile } = useSidebar();
   return (
-    <div className="relative rounded-full sm:hidden">
+    <div className="relative rounded-full">
       <PiListBulletsBold
         color="#C6C6C6"
         size={27}

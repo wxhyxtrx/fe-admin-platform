@@ -6,15 +6,15 @@ import { LiaBoxesSolid } from "react-icons/lia";
 export default function ListReview() {
   const data = [
     {
-      title: "Customers",
+      title: "Pelanggan",
       icon: AiOutlineUsergroupAdd,
-      value: "+30 Person",
+      value: "+30 Orang",
       percent: 10,
       vs: 700,
       type: "up",
     },
     {
-      title: "Orders",
+      title: "Pesanan",
       icon: AiOutlineShoppingCart,
       value: "+120 invoice",
       percent: 20,
@@ -22,7 +22,7 @@ export default function ListReview() {
       type: "up",
     },
     {
-      title: "Products",
+      title: "Barang",
       icon: LiaBoxesSolid,
       value: "+12 Pcs",
       percent: 5,
@@ -43,7 +43,7 @@ export default function ListReview() {
               {item.title}
             </Text>
             <Text variant="span" className="text-gray-400">
-              Last 30 Days
+              30 Hari terakhir
             </Text>
           </CardHeader>
           <CardContent className="py-0 px-4 space-y-1.5">
@@ -55,7 +55,7 @@ export default function ListReview() {
               />
             </div>
             <Text variant="span" className="text-gray-400">
-              vs {item.vs} last period
+              dari {item.vs} periode terakhir
             </Text>
           </CardContent>
         </Card>

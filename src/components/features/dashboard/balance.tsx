@@ -11,21 +11,21 @@ export default function Balance() {
     <Card className="bg-gradient-to-br from-accent from-20% to-accent/50 rounded-2xl px-5 py-8 border-0 flex flex-row items-center justify-between">
       <div className="space-y-2 flex-1 ">
         <Text variant="p" className="capitalize font-light text-white">
-          total Income
+          total Pendapatan
         </Text>
         <Text variant="h3" className="font-medium text-white">
           {formatCurrency(1000000)}
         </Text>
       </div>
       <div className="flex justify-center gap-2">
-        <Button variant={"default"} className="text-white!">
-          <PiPlusBold /> Add
+        <Button variant={"default"} className="">
+          <PiPlusBold /> Tambah
         </Button>
         <Button variant={"outline"} className=" border-0">
-          <BiUserPlus /> New User
+          <BiUserPlus /> Pelanggan Baru
         </Button>
         <Button variant={"outline"} className=" border-0">
-          <PiBoxArrowDown /> Add Product
+          <PiBoxArrowDown /> Tambah Barang
         </Button>
       </div>
     </Card>

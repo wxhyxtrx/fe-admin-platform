@@ -23,8 +23,8 @@ const PaginationInfo = ({
   }
 
   return (
-    <div className={cn("flex items-center space-x-2 w-full", className)}>
-      <span className="text-sm text-neutral-800">Displaying</span>
+    <div className={cn("flex items-center space-x-2 w-full select-none", className)}>
+      <span className="text-sm text-neutral-800 dark:text-foreground">Menampilkan</span>
       <Select value={String(displayed)} onValueChange={handleValueChange}>
         <SelectTrigger className="!h-10 w-[70px] text-sm py-0 focus-visible:border-border focus-visible:outline-0 focus-visible:ring-0 ">
           <SelectValue placeholder={String(displayed)} />
@@ -37,8 +37,8 @@ const PaginationInfo = ({
           ))}
         </SelectContent>
       </Select>
-      <span className="text-sm text-neutral-800">
-        of {total} {total === 1 ? "item" : "items"}
+      <span className="text-sm text-neutral-800 dark:text-foreground">
+        dari {total} item
       </span>
     </div>
   )

@@ -21,11 +21,14 @@ import {
   PiChartDonutBold,
   PiInvoiceBold,
   PiPackageBold,
+  PiShoppingBagBold,
   PiUserListBold,
   PiUsersBold,
   PiWalletBold,
 } from "react-icons/pi";
 import Text from "../../atoms/text";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 // Menu items.
 const items = [
@@ -33,6 +36,11 @@ const items = [
     title: "Dashboard",
     url: "/dashboard",
     icon: PiChartDonutBold,
+  },
+  {
+    title: "Pesanan",
+    url: "/pesanan",
+    icon: PiShoppingBagBold,
   },
   {
     title: "Tagihan",
@@ -61,14 +69,14 @@ const items = [
   },
   {
     title: "Settings",
-    url: "#",
+    url: "/settings",
     icon: Settings,
   },
 ];
 
 export function AppSidebar() {
   const pathname = usePathname();
-  const { open, setOpen } = useSidebar();
+  const { open } = useSidebar();
   const { theme } = useThemeStore();
 
   return (
@@ -81,6 +89,7 @@ export function AppSidebar() {
               alt="logo"
               width={35}
               height={35}
+              className={cn(!open && "ms-3")}
             />
           ) : (
             <Image
@@ -88,19 +97,24 @@ export function AppSidebar() {
               alt="logo"
               width={35}
               height={35}
+              className={cn(!open && "ms-3")}
             />
           )}
-          <div id="platform" className="flex flex-col gap-0">
-            <Text
-              variant="h5"
-              className="p-0 text-stone-900 dark:text-white leading-5"
-            >
-              3Light Store
-            </Text>
-            <Text variant="span" className="text-stone-500 dark:text-white">
-              Admin Panel Reference
-            </Text>
-          </div>
+          {open && (
+            <div id="platform" className={cn("flex flex-col gap-0 line-clamp-2", {
+              "hidden": !open,
+            })}>
+              <Text
+                variant="h5"
+                className="p-0 text-stone-900 dark:text-white leading-5"
+              >
+                3Light Store
+              </Text>
+              <Text variant="span" className="text-stone-500 dark:text-white">
+                Admin Panel Reference
+              </Text>
+            </div>
+          )}
         </div>
       </SidebarHeader>
       <SidebarContent>
@@ -113,12 +127,12 @@ export function AppSidebar() {
                     isActive={item.url === pathname}
                     size={"lg"}
                     asChild
-                    className=" data-[active=true]:text-white hover:bg-primary"
+                    className={cn(" data-[active=true]:text-white hover:bg-primary")}
                   >
-                    <a href={item.url}>
-                      <item.icon className="!size-[22px]" />
+                    <Link href={item.url}>
+                      <item.icon className={cn("!size-[22px]", !open && "!size-[24px] -ms-1")} />
                       <span className="text-sm font-medium">{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

@@ -35,7 +35,7 @@ export default function TopLocation() {
       className: "",
     },
     {
-      label: "Location",
+      label: "Lokasi",
       renderCell: ({ location }) => (
         <p className="flex items-center gap-2">
           {top1?.location === location && (
@@ -47,19 +47,19 @@ export default function TopLocation() {
       className: "",
     },
     {
-      label: "Staff",
+      label: "Petugas",
       renderCell: ({ staff }) => <p className="line-clamp-1">{staff}</p>,
       className: "",
     },
     {
-      label: "Income",
+      label: "Pendapatan",
       renderCell: ({ income }) => <p>{formatCurrency(income)}</p>,
     },
   ];
   return (
     <Card>
-      <CardHeader>
-        <Text>Top Location</Text>
+      <CardHeader className="flex justify-between gap-5 items-center">
+        <Text variant="h5" className="p-0 text-stone-900 dark:text-white leading-5">Lokasi Terbaik</Text>
       </CardHeader>
       <CardContent>
         <Tables data={dataLocation} columns={columnTopLocation} />

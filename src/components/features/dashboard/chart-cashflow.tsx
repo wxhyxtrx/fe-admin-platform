@@ -48,14 +48,14 @@ export default function ChartCashflow() {
         <div className="flex justify-between items-center gap-5">
           <Text className="flex items-center gap-2 text-xl">
             <CgArrowsExchangeV className="text-accent text-2xl!" />
-            Cashflow
+            Transaksi
           </Text>
           <div className="flex items-center gap-2">
             <DatePicker />
             <Tabs defaultValue="monthly">
               <TabsList>
-                <TabsTrigger value="weekly">Weekly</TabsTrigger>
-                <TabsTrigger value="monthly">Monthly</TabsTrigger>
+                <TabsTrigger value="weekly">Mingguan</TabsTrigger>
+                <TabsTrigger value="monthly">Bulanan</TabsTrigger>
               </TabsList>
             </Tabs>
           </div>
@@ -134,7 +134,7 @@ export default function ChartCashflow() {
                 <PiArrowDownLeftBold className="text-4xl text-white" />
               </div>
               <div>
-                <Text className="text-gray-400">Income</Text>
+                <Text className="text-gray-400">Pendapatan</Text>
                 <div>
                   <Text variant="h3">{formatCurrency(1000000)}</Text>
                   <PercentCalc variant="up" value={10} />
@@ -146,7 +146,7 @@ export default function ChartCashflow() {
                 <PiArrowUpRightBold className="text-4xl text-white" />
               </div>
               <div>
-                <Text className="text-gray-400">Sales</Text>
+                <Text className="text-gray-400">Penjualan</Text>
                 <div>
                   <Text variant="h3">40 Pcs</Text>
                   <PercentCalc variant="down" value={10} />
